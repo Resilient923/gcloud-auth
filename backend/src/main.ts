@@ -9,7 +9,6 @@ async function bootstrap() {
   .setTitle('mathpresso-auth-steady')
   .setDescription('mathpresso-auth-steady API description')
   .setVersion('1.0')
-  .addTag('quanda')
   .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);

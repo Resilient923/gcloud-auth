@@ -1,0 +1,25 @@
+.idea
+.vscode
+.DS_Store
+npm-debug.log
+default.profraw
+
+lib/
+dist/
+.tmp/
+.rpt2_cache/
+typings/
+coverage/
+node_modules/
+builds/ciap/
+tmp/
+.nyc_output/
+.firebase/
+
+# Generated files.
+*.log
+*.pyc
+.DS_Store
+*~
+*.swp
+frontend/build/
