@@ -1,0 +1,16 @@
+# 컨테이너 빌드 레퍼런스 참고
+# https://cloud.google.com/build/docs/build-config-file-schema
+
+steps:
+- name: 'gcr.io/cloud-builders/yarn:node-16.14.2'
+  dir: 'frontend'
+  args: ['install', '--non-interactive', '--frozen-lockfile']
+
+- name: 'gcr.io/cloud-builders/yarn:node-16.14.2'
+  dir: 'frontend'
+  args: ['build']
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['app', 'deploy', '--verbosity', 'debug', 'dispatch.yaml', 'frontend/app.yaml', 'backend/app.yaml']
+
+timeout: '1600s'
