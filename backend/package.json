@@ -21,15 +21,23 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@google-cloud/firestore": "^5.0.2",
     "@nestjs/common": "^8.0.0",
+    "@nestjs/config": "^2.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/swagger": "^5.2.0",
+    "dayjs": "^1.11.0",
     "fastify-swagger": "^5.0.0",
+    "firebase": "^9.6.10",
+    "firestore": "^1.1.6",
+    "google-auth-library": "^7.14.1",
+    "nest-winston": "^1.6.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
-    "swagger-ui-express": "^4.3.0"
+    "swagger-ui-express": "^4.3.0",
+    "winston": "^3.6.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",
