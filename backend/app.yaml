@@ -1,0 +1,29 @@
+# https://cloud.google.com/appengine/docs/standard/nodejs/config/appref
+runtime: nodejs16
+env: standard
+instance_class: F1
+service: backend
+
+default_expiration: "30m"
+
+handlers:
+- url: /api/.*
+  # HTTPS를 사용하지 않으며 이 핸들러와 일치하는 URL 요청은 동일한 경로의 HTTPS URL로 자동 리디렉션됩니다. 
+  # 쿼리 매개변수는 리디렉션을 위해 보존됩니다.
+  secure: always
+  redirect_http_response_code: 301
+  # 모든 트래픽은 entrypoint 명령어를 통해 제공되므로 script 요소에 허용되는 유일한 값은 auto입니다. 
+  # 정적 핸들러를 사용하려면 최소 한 개 이상 핸들러에 script: auto 줄이 포함되거나 entrypoint 요소를 정의하여 배포해야 합니다.
+  script: auto
+
+automatic_scaling:
+  min_idle_instances: 0
+  max_idle_instances: 1
+  max_concurrent_requests: 20
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+
+# warmup은 타 서비스 api 커넥션 연결, db 커넥션 연결, 캐시 등의 작업을 미리 수행하는 것을 의미
+# 준비 요청을 사용 설정
+inbound_services:
+- warmup

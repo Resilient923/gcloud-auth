@@ -1,11 +1,9 @@
-// import { ApiSiteDocument } from "../sites/document";
-import { ApiSiteDocument } from "src/sites/documents/sites.document";
-import { TodoDocument } from "src/todo/documents/todo.document";
+import { ApiSiteDocument } from "../api-sites/document";
 
 export const FirestoreDatabaseProvider = 'firestoredb';
 export const FirestoreOptionsProvider = 'firestoreOptions'
 export const FirestoreCollectionProviders: string[] = [
-    TodoDocument.collectionName,
+    //TodoDocument.collectionName,
     ApiSiteDocument.collectionName
 ];
 
